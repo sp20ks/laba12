@@ -1,0 +1,36 @@
+<h1>Elements#result</h1>
+<table class='table table-bordered' style = 'width: 60%;'>
+      <tr>
+        <th>Task</th>
+        <th>Result of task</th>
+      </tr>
+      <tr>
+        <td>Length of sequence</td>
+        <td><%=@length%></td>
+      </tr>
+      <tr>
+        <td>Sequence</td>
+        <td><%=@arr%></td>
+      </tr>
+      <tr>
+      <%if !@seg_arr.length.zero?%> 
+        <td>Sequences of powers of 5</td>
+        <td><%@seg_arr.each do |elem|%>
+              <p><%=elem%></p>
+            <%end%>
+        </td>
+      </tr>
+      <tr>
+        <td>Sequence of powers of 5 with max length</td>
+        <td><%=@max_subarr%></td>
+      </tr>
+      <tr>
+        <td>Number of sequences of powers of 5</td>
+        <td><%=@seg_arr.length%></td>
+      </tr>
+            <%else%>
+                <p>There are no sequences of powers of 5</p>
+            <%end%>
+    </table>
+      <div><%=link_to "return to home page", "/"%></div>
+

@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  arr: MyString
+  length: 1
+  res_arr: MyString
+  max_subarr: MyString
+
+two:
+  arr: MyString
+  length: 1
+  res_arr: MyString
+  max_subarr: MyString
