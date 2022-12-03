@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Laba112</title>
+    <title>Laba12</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,7 +10,23 @@
     <%= stylesheet_link_tag 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css' %>
     <%= javascript_importmap_tags %>
   </head>
-
+  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 mr-md-auto text-dark text-decoration-none">
+      <div class='text-left'>
+        <ul class="nav col-12 col-lg-auto mr-lg-auto mb-3 mb-md-0">
+            <% if user_signed_in? %>
+            <strong><span class='current'><%= current_user.email %></span></strong>
+            <li><strong><%= link_to 'Exit', exit_path, class: 'nav-link px-2' %></strong></li>
+            <li><strong><%= link_to 'Add sequence', adding_path, class: 'nav-link px-2' %></strong></li>
+            <li><strong><%= link_to 'All users', all_path, class: 'nav-link px-2' %></strong></li>
+            <% else %>
+            <li><strong><%= link_to 'Log in', new_sess_path, class: 'nav-link px-2' %></strong></li>
+            <li><strong><%= link_to 'Sign in', new_us_path, class: 'nav-link px-2' %></strong></li>
+            <% end %>
+        </ul>
+         </div>
+    </a>
+  </header>
   <body>
   <% flash.each do |type, msg| %>
       <div class='alert alert-info' id='flash'>

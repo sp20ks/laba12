@@ -1,0 +1,8 @@
+<h3>All users:</h3>
+<% k = 1 %>
+<%@users.each do |user|%>
+<h6> User №<%= k %>:</h3>
+    <p>Email: <%=user.email %></p>
+    <p>Account created in <%=user.created_at%> </p>
+    <% k += 1 %>
+<% end %>

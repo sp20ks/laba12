@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
-  root 'elements#home', as: 'home'
+  resource :session, only: %i[new create destroy]
+  resources :users
+
+  root 'sessions#new', as: 'home'
+
   get 'elements/index', as: 'adding'
   get 'elements/result', as: 'result'
-  get 'elements/show_all'
-  get 'elements/find_seq', as: 'find'
-  get 'elements/res_of_search'
+
+  get 'users/index', as: 'all'
+  get 'users/new', as: 'new_us'
+
+  get 'sessions/destroy', as: 'exit'
+  get 'sessions/new', as: 'new_sess'
+  get 'sessions/create'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
