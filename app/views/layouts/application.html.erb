@@ -13,7 +13,7 @@
 
   <body>
   <% flash.each do |type, msg| %>
-      <div class='alert alert-info'>
+      <div class='alert alert-info' id='flash'>
         <%= msg %>
       </div>
     <% end %>

@@ -1,9 +1,12 @@
+# frozen_string_literal: true
+
 module ElementsHelper
+
   def set_values
     @length = params[:length].to_i
     @str = params[:str_elem]
   end
-  
+
   def check_data
     if /[^\d^\s]/.match(@str) then redirect_to adding_path, notice: "Sequence isn't correct"
     else
@@ -34,7 +37,7 @@ module ElementsHelper
       false
     end
   end
-  
+
   def segments_of_powers
     @seg_arr = []
     buf = []

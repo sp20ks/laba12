@@ -70,9 +70,16 @@ gem 'active_model_serializers'
 gem 'mongo_mapper'
 gem 'bson_ext'
 
+gem 'rails-controller-testing'
+group :development, :test do
+  gem 'rspec-rails', '>= 3.9.0'
+end
+
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
-  gem "selenium-webdriver"
-  gem "webdrivers"
+  gem 'capybara'
+  gem 'selenium-webdriver', '= 4.6.1'
+  gem 'webdrivers'
 end
+
+gem 'faker'
