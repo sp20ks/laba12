@@ -2,7 +2,7 @@
 
 # class of controller
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ edit update destroy]
+  before_action :set_user, only: %i[edit update destroy]
 
   def index; end
 
@@ -19,15 +19,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if User.find_by(email: @user.email)
-      flash[:warning] = 'This email has been used. Try another email'
+    if !@user.save
+      flash[:warning] = @user.errors.full_messages.join(' and ')
       redirect_to new_us_path
-    elsif @user.save
+    else
       session[:user_id] = @user.id
       flash[:success] = "Welcome, #{@user.email}!"
       redirect_to adding_path
-    else
-      redirect_to new_us_path, notice: "Passwords don't match or login or password data exists"
     end
   end
 
