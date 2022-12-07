@@ -16,7 +16,7 @@
         <ul class="nav col-12 col-lg-auto mr-lg-auto mb-3 mb-md-0">
             <% if user_signed_in? %>
             <strong><span class='current'><%= current_user.email %></span></strong>
-            <li><strong><%= link_to 'Exit', exit_path, class: 'nav-link px-2' %></strong></li>
+            <li><strong><%= link_to 'Exit', exit_path, class: 'nav-link px-2', id: 'exit '%></strong></li>
             <li><strong><%= link_to 'Add sequence', adding_path, class: 'nav-link px-2' %></strong></li>
             <li><strong><%= link_to 'All users', all_path, class: 'nav-link px-2' %></strong></li>
             <% else %>
