@@ -259,7 +259,7 @@ DEPENDENCIES
   activemodel-serializers-xml
   bcrypt
   bootsnap
-  bson_ext
+  bson_ext (~> 1.12.5)
   capybara
   debug
   faker
