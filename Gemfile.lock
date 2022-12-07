@@ -81,9 +81,6 @@ GEM
     bindex (0.8.1)
     bootsnap (1.15.0)
       msgpack (~> 1.2)
-    bson (1.12.5)
-    bson_ext (1.12.5)
-      bson (~> 1.12.5)
     builder (3.2.4)
     capybara (3.38.0)
       addressable
@@ -130,13 +127,6 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.2)
     minitest (5.16.3)
-    mongo (1.12.5)
-      bson (= 1.12.5)
-    mongo_mapper (0.14.0)
-      activemodel (>= 3.0.0)
-      activesupport (>= 3.0)
-      mongo (~> 1.8)
-      plucky (~> 0.7.0)
     msgpack (1.6.0)
     net-imap (0.3.1)
       net-protocol
@@ -150,8 +140,6 @@ GEM
     nokogiri (1.13.9-x86_64-linux)
       racc (~> 1.4)
     pg (1.4.5)
-    plucky (0.7.0)
-      mongo (~> 1.5)
     public_suffix (5.0.0)
     puma (5.6.5)
       nio4r (~> 2.0)
@@ -259,13 +247,11 @@ DEPENDENCIES
   activemodel-serializers-xml
   bcrypt
   bootsnap
-  bson_ext (~> 1.12.5)
   capybara
   debug
   faker
   importmap-rails
   jbuilder
-  mongo_mapper
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4)

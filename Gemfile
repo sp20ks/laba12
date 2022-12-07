@@ -69,9 +69,6 @@ end
 gem 'activemodel-serializers-xml'
 gem 'active_model_serializers'
 
-gem 'mongo_mapper'
-gem 'bson_ext', '~> 1.12.5'
-
 gem 'rails-controller-testing'
 group :development, :test do
   gem 'rspec-rails', '>= 3.9.0'
