@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
 
   def new; end
 
+  # rubocop:disable Metrics/AbcSize
   def create
     @user = User.find_by(email: params[:email])
     if !!@user && @user.authenticate(params[:password])
@@ -18,6 +19,7 @@ class SessionsController < ApplicationController
       redirect_to home_path
     end
   end
+  # rubocop:enable Metrics/AbcSize
 
   def destroy
     session.delete :user_id

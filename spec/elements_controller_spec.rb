@@ -9,7 +9,6 @@ RSpec.describe ElementsController do
     driver.get('localhost:3000/elements/index')
     driver.manage.timeouts.implicit_wait = 50
 
-
     driver.find_element(id: 'number').send_keys(9)
     driver.find_element(id: 'str').send_keys('1 2 3 4 5 6 7 8 9')
     driver.find_element(id: 'btn').click
@@ -23,7 +22,6 @@ RSpec.describe ElementsController do
     driver = Selenium::WebDriver.for :firefox
     driver.get('localhost:3000/elements/index')
     driver.manage.timeouts.implicit_wait = 50
-
 
     driver.find_element(id: 'number').send_keys(9)
     driver.find_element(id: 'str').send_keys('1 2 3 4 5 6 7 8 9')

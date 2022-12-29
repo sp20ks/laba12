@@ -14,6 +14,7 @@ class Element < ApplicationRecord
 
   private
 
+  # rubocop:disable Metrics/AbcSize
   def segments_of_powers
     seg_arr = []
     buf = []
@@ -28,13 +29,14 @@ class Element < ApplicationRecord
     self.res_arr = seg_arr.join(' ')
     largest_segment(seg_arr)
   end
+  # rubocop:enable Metrics/AbcSize
 
   def largest_segment(arr)
-    unless arr.length.zero?
-      max = arr[0]
-      arr.each { |elem| max = elem if max.length < elem.length }
-      self.max_subarr = max
-    end
+    return if arr.length.zero?
+
+    max = arr[0]
+    arr.each { |elem| max = elem if max.length < elem.length }
+    self.max_subarr = max
   end
 
   def power_of_5?(num)
